@@ -52,7 +52,13 @@
 
         html, body, #root {
             height: 100%;
+            min-height: 100vh;
+            min-height: -webkit-fill-available;
             overflow: hidden;
+        }
+        
+        html {
+            height: -webkit-fill-available;
         }
 
         body {
@@ -470,7 +476,9 @@
             app: {
                 display: 'flex',
                 flexDirection: 'column',
-                height: '100%',
+                height: '100vh',
+                minHeight: '100vh',
+                minHeight: '-webkit-fill-available',
                 background: 'var(--bg-primary)',
             },
             header: {
@@ -515,8 +523,9 @@
             },
             mainContent: {
                 display: 'flex',
-                flex: 1,
+                flex: '1 1 auto',
                 overflow: 'hidden',
+                minHeight: 0,
             },
             sidebar: {
                 width: '280px',
@@ -543,10 +552,11 @@
                 padding: '12px',
             },
             canvas: {
-                flex: 1,
+                flex: '1 1 auto',
                 position: 'relative',
                 overflow: 'hidden',
                 background: 'var(--bg-primary)',
+                minHeight: 0,
             },
             canvasInner: {
                 position: 'absolute',
@@ -2368,3 +2378,4 @@
     </script>
 </body>
 </html>
+
